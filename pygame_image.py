@@ -37,6 +37,8 @@ def main():
             kk_rct.move_ip((-1,0))
         if key_lst[pg.K_RIGHT]:
             kk_rct.move_ip((+1,0))
+        if not key_lst[pg.K_RIGHT]:
+            kk_rct.move_ip((-1,0))
                 
         clock.tick(200) #練習5
 
