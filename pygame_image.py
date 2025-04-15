@@ -29,16 +29,24 @@ def main():
         pg.display.update()
         tmr += 1
         key_lst = pg.key.get_pressed() #練習9
+        h = 0
+        v = 0
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0,-1))
-        if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0,+1))
-        if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1,0))
-        if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((+1,0))
-        if not key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((-1,0))
+            h = 0
+            v = -1
+        elif key_lst[pg.K_DOWN]:
+            h = 0
+            v = +1
+        elif key_lst[pg.K_LEFT]:
+            h = -2
+            v = 0
+        elif key_lst[pg.K_RIGHT]:
+            h = +1
+            v = 0
+        elif not key_lst[pg.K_RIGHT]:
+            h = -1
+            v = 0
+        kk_rct.move_ip((h,v))
                 
         clock.tick(200) #練習5
 
